@@ -37,3 +37,27 @@ nbMots++;
 console.log("Longueur de la phrase : " + nbCaracteres);
 console.log("Nombre de mots : " + nbMots);
 console.log("Nombre de voyelles : " + nbVoyelles);
+
+// tri par insertion
+function triParInsertion(arr) {
+  for (let i = 1; i < arr.length; i++) {
+    let current = arr[i]; // L'élément à insérer
+    let j = i - 1;
+
+    // Décale les éléments supérieurs à current vers la droite
+    while (j >= 0 && arr[j] > current) {
+      arr[j + 1] = arr[j];
+      j--;
+    }
+
+    // Place current à sa bonne position
+    arr[j + 1] = current;
+  }
+
+  return arr;
+}
+
+// Exemple d'utilisation
+let tableau = [5, 2, 9, 1, 3];
+console.log("Avant tri :", tableau);
+console.log("Après tri :", triParInsertion(tableau));
