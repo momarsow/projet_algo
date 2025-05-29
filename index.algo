@@ -1,0 +1,40 @@
+DEBUT
+
+    // Initialiser les compteurs
+    longueur <- 0
+    nbMots <- 0
+    nbVoyelles <- 0
+
+    // Initialiser une variable pour lire les caractères
+    caractere <- ''
+
+    // Lire le premier caractère
+    LIRE(caractere)
+
+    // Boucle tant que le caractère est différent du point
+    TANT QUE caractere != '.'
+        longueur <- longueur + 1
+
+        // Vérifier si c'est une voyelle
+        SI caractere est dans ['a', 'e', 'i', 'o', 'u', 'y', 'A', 'E', 'I', 'O', 'U', 'Y'] ALORS
+            nbVoyelles <- nbVoyelles + 1
+        FIN SI
+
+        // Vérifier si c'est un espace (mot fini)
+        SI caractere == ' ' ALORS
+            nbMots <- nbMots + 1
+        FIN SI
+
+        // Lire le caractère suivant
+        LIRE(caractere)
+    FIN TANT QUE
+
+    // Ajouter le dernier mot (avant le point)
+    nbMots <- nbMots + 1
+
+    // Afficher les résultats
+    AFFICHER "Longueur de la phrase : ", longueur
+    AFFICHER "Nombre de mots : ", nbMots
+    AFFICHER "Nombre de voyelles : ", nbVoyelles
+
+FIN
